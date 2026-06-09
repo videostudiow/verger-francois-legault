@@ -54,10 +54,10 @@ export const metadata: Metadata = {
       "Cueillez vos pommes en toute tranquillité dans notre verger familial de Mont-Saint-Hilaire.",
     images: [
       {
-        url: "/images/cueillette-main-pommes.jpg",
+        url: "/images/enseigne-verger-1.jpg",
         width: 1200,
         height: 630,
-        alt: "Cueillette de pommes au Verger François Legault, Mont-Saint-Hilaire",
+        alt: "L'enseigne du Verger François Legault, Mont-Saint-Hilaire",
       },
     ],
   },
