@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Palette « Verger éditorial » — crème, rouge brique, vert forêt.
+     Reproduit le design approuvé. Modifiable via /admin (table site_colors). */
+  --color-primary: #c8463b;        /* Rouge brique (CTA, accents, étoiles) */
+  --color-secondary: #2e5443;      /* Vert forêt (boutons, titres) */
+  --color-accent: #e3b94e;         /* Or doux */
+  --color-background: #fbf5ea;     /* Crème chaud */
+  --color-surface: #ffffff;        /* Blanc (cartes) */
+  --color-deep: #2e5443;           /* Vert forêt (section sombre) */
+  --color-text: #26302a;           /* Encre vert charbon */
+  --color-muted: #6f756c;          /* Gris sauge doux */
+
+  /* Tons doux harmonisés */
+  --tint-1: #f6edda;
+  --tint-2: #eef3ec;
+  --tint-3: #faece9;
+  --tint-4: #f3e3a8;               /* Jaune carte (illustration / visite) */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+}
+
+/* Accent serif italique (sous-titres, chiffres, citations) */
+.accent-italic {
+  font-family: var(--font-heading), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Libellé sans-serif, espacé, en capitales */
+.label {
+  font-family: var(--font-body), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Carte douce : coins arrondis, ombre légère */
+.paper-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(38, 48, 42, 0.06);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 48px -20px rgba(38, 48, 42, 0.22);
+}
+
+/* ───────── Motion ───────── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .reveal-2 { animation-delay: 0.12s; }
+  @keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .marquee-track { animation: marquee 30s linear infinite; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+}
