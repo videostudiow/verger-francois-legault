@@ -6,17 +6,43 @@ import type { SiteContent } from "@/lib/types";
 
 // Labels français par clé technique
 const LABELS: Record<string, { label: string; group: string; multiline?: boolean }> = {
-  hero_title:        { label: "Titre principal (page d'accueil)", group: "Accueil" },
-  hero_subtitle:     { label: "Sous-titre (page d'accueil)", group: "Accueil", multiline: true },
-  hero_cta_primary:  { label: "Bouton principal", group: "Accueil" },
-  hero_cta_secondary:{ label: "Bouton secondaire", group: "Accueil" },
-  about_title:       { label: "Titre — À propos", group: "À propos" },
-  about_text:        { label: "Texte — À propos", group: "À propos", multiline: true },
-  autocueillette_title:  { label: "Titre — Autocueillette", group: "Autocueillette" },
-  autocueillette_text:   { label: "Texte — Autocueillette", group: "Autocueillette", multiline: true },
-  contact_title:     { label: "Titre — Contact", group: "Contact" },
-  contact_subtitle:  { label: "Sous-titre — Contact", group: "Contact", multiline: true },
-  meta_description:  { label: "Description SEO (meta)", group: "SEO" },
+  // ── Accueil — Hero ──
+  hero_eyebrow:            { label: "Bandeau (ex: Saison ouverte dès septembre)", group: "Accueil — Hero" },
+  hero_titre_normal:       { label: "Titre ligne 1 (ex: Cueillir)", group: "Accueil — Hero" },
+  hero_titre_accent:       { label: "Titre ligne 2 — italique rouge (ex: la paix.)", group: "Accueil — Hero" },
+  hero_sous_titre:         { label: "Sous-titre / citation hero", group: "Accueil — Hero", multiline: true },
+  hero_cta_primary:        { label: "Bouton principal (ex: Obtenir l'itinéraire)", group: "Accueil — Hero" },
+  hero_honeycrisp_label:   { label: "Carte Honeycrisp — étiquette (ex: Spécialité)", group: "Accueil — Hero" },
+  hero_honeycrisp_titre:   { label: "Carte Honeycrisp — nom variété (ex: Honeycrisp)", group: "Accueil — Hero" },
+  hero_honeycrisp_desc:    { label: "Carte Honeycrisp — description courte", group: "Accueil — Hero", multiline: true },
+  // ── Notre Promesse ──
+  promesse_titre:          { label: "Titre de section", group: "Notre Promesse", multiline: true },
+  pilier_1_titre:          { label: "Pilier 01 — Titre", group: "Notre Promesse" },
+  pilier_1_desc:           { label: "Pilier 01 — Description", group: "Notre Promesse", multiline: true },
+  pilier_2_titre:          { label: "Pilier 02 — Titre", group: "Notre Promesse" },
+  pilier_2_desc:           { label: "Pilier 02 — Description", group: "Notre Promesse", multiline: true },
+  pilier_3_titre:          { label: "Pilier 03 — Titre", group: "Notre Promesse" },
+  pilier_3_desc:           { label: "Pilier 03 — Description", group: "Notre Promesse", multiline: true },
+  // ── Avis ──
+  avis_titre:              { label: "Titre de section", group: "Avis clients" },
+  avis_1_texte:            { label: "Avis 1 — Texte", group: "Avis clients", multiline: true },
+  avis_1_auteur:           { label: "Avis 1 — Nom", group: "Avis clients" },
+  avis_1_source:           { label: "Avis 1 — Source (ex: Avis Google)", group: "Avis clients" },
+  avis_2_texte:            { label: "Avis 2 — Texte", group: "Avis clients", multiline: true },
+  avis_2_auteur:           { label: "Avis 2 — Nom", group: "Avis clients" },
+  avis_2_source:           { label: "Avis 2 — Source", group: "Avis clients" },
+  avis_3_texte:            { label: "Avis 3 — Texte", group: "Avis clients", multiline: true },
+  avis_3_auteur:           { label: "Avis 3 — Nom", group: "Avis clients" },
+  avis_3_source:           { label: "Avis 3 — Source", group: "Avis clients" },
+  // ── Section Visite ──
+  visite_label:            { label: "Étiquette (ex: Planifiez votre visite)", group: "Section Visite" },
+  visite_titre:            { label: "Titre (ex: On vous garde une branche.)", group: "Section Visite" },
+  // ── Notre Verger ──
+  about_titre:             { label: "Titre — Notre verger", group: "Notre Verger" },
+  about_texte:             { label: "Texte — Notre verger", group: "Notre Verger", multiline: true },
+  // ── Contact ──
+  contact_titre:           { label: "Titre — Contact", group: "Contact" },
+  meta_description:        { label: "Description SEO (meta)", group: "SEO" },
 };
 
 type Toast = { message: string; type: "success" | "error" };

@@ -22,9 +22,9 @@ export default async function HomePage() {
             </span>
 
             <h1 className="mt-6 font-heading text-6xl leading-[0.95] text-secondary sm:text-7xl lg:text-[5.5rem]">
-              Cueillir
+              {content.hero.titleNormal}
               <br />
-              <span className="accent-italic text-primary">la paix.</span>
+              <span className="accent-italic text-primary">{content.hero.titleAccent}</span>
             </h1>
 
             <p className="mt-7 max-w-md accent-italic text-lg leading-relaxed text-text/75">
@@ -72,10 +72,10 @@ export default async function HomePage() {
               />
             </div>
             <div className="absolute -bottom-6 right-4 max-w-[15rem] rounded-2xl bg-surface p-5 shadow-xl shadow-text/15 sm:right-6">
-              <p className="label text-text/55">Spécialité</p>
-              <p className="mt-1 font-heading text-2xl text-primary">Honeycrisp</p>
+              <p className="label text-text/55">{content.hero.honeycrisplabel}</p>
+              <p className="mt-1 font-heading text-2xl text-primary">{content.hero.honeycrisptitle}</p>
               <p className="mt-1 text-sm leading-snug text-text/65">
-                La pomme la plus croquante du Québec, disponible dès septembre.
+                {content.hero.honeycrispdesc}
               </p>
             </div>
           </Reveal>
@@ -87,7 +87,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-content rounded-[2.5rem] bg-deep px-6 py-16 text-white sm:px-12 lg:px-16 lg:py-20">
           <Reveal>
             <h2 className="max-w-2xl font-heading text-4xl leading-tight md:text-5xl">
-              Pourquoi des familles reviennent ici, année après année.
+              {content.experience.sectionTitle}
             </h2>
           </Reveal>
 
@@ -110,7 +110,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-content px-5 sm:px-8">
           <Reveal className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="font-heading text-4xl text-text md:text-5xl">
-              Ce que les gens disent.
+              {content.avis.sectionTitle}
             </h2>
             <p className="label text-text/55">{siteInfo.nbAvis} avis Google</p>
           </Reveal>
@@ -141,9 +141,9 @@ export default async function HomePage() {
           <div className="paper-card grid overflow-hidden md:grid-cols-2">
             {/* Infos */}
             <div className="p-8 sm:p-10 lg:p-12">
-              <p className="label text-primary">Planifiez votre visite</p>
+              <p className="label text-primary">{content.visite.label}</p>
               <h2 className="mt-3 font-heading text-4xl text-text">
-                On vous garde une branche.
+                {content.visite.titre}
               </h2>
 
               <dl className="mt-8 space-y-5">

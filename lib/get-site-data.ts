@@ -43,42 +43,96 @@ export async function getSiteData() {
   const i = toMap(infoRes.data as Row[] | null);
   const col = toMap(colorsRes.data as Row[] | null);
 
+  const dp = defaultContent;
+
   const content = {
-    ...defaultContent,
+    ...dp,
     hero: {
-      ...defaultContent.hero,
-      title: pick(c.hero_titre, defaultContent.hero.title),
-      subtitle: pick(c.hero_sous_titre, defaultContent.hero.subtitle),
+      eyebrow:     pick(c.hero_eyebrow,      dp.hero.eyebrow),
+      titleNormal: pick(c.hero_titre_normal,  "Cueillir"),
+      titleAccent: pick(c.hero_titre_accent,  "la paix."),
+      title:       pick(c.hero_titre,         dp.hero.title),
+      subtitle:    pick(c.hero_sous_titre,    dp.hero.subtitle),
+      ctaPrimary:  pick(c.hero_cta_primary,   dp.hero.ctaPrimary),
+      ctaSecondary:pick(c.hero_cta_secondaire,dp.hero.ctaSecondary),
+      honeycrisplabel: pick(c.hero_honeycrisp_label, "Spécialité"),
+      honeycrisptitle: pick(c.hero_honeycrisp_titre, "Honeycrisp"),
+      honeycrispdesc:  pick(c.hero_honeycrisp_desc,  "La pomme la plus croquante du Québec, disponible dès septembre."),
+    },
+    experience: {
+      ...dp.experience,
+      sectionTitle: pick(c.promesse_titre, "Pourquoi des familles reviennent ici, année après année."),
+      piliers: [
+        {
+          title: pick(c.pilier_1_titre, dp.experience.piliers[0].title),
+          desc:  pick(c.pilier_1_desc,  dp.experience.piliers[0].desc),
+        },
+        {
+          title: pick(c.pilier_2_titre, dp.experience.piliers[1].title),
+          desc:  pick(c.pilier_2_desc,  dp.experience.piliers[1].desc),
+        },
+        {
+          title: pick(c.pilier_3_titre, dp.experience.piliers[2].title),
+          desc:  pick(c.pilier_3_desc,  dp.experience.piliers[2].desc),
+        },
+      ],
+    },
+    avis: {
+      sectionTitle: pick(c.avis_titre, "Ce que les gens disent."),
+      items: [
+        {
+          text:   pick(c.avis_1_texte,  dp.avis.items[0].text),
+          author: pick(c.avis_1_auteur, dp.avis.items[0].author),
+          source: pick(c.avis_1_source, dp.avis.items[0].source),
+        },
+        {
+          text:   pick(c.avis_2_texte,  dp.avis.items[1].text),
+          author: pick(c.avis_2_auteur, dp.avis.items[1].author),
+          source: pick(c.avis_2_source, dp.avis.items[1].source),
+        },
+        {
+          text:   pick(c.avis_3_texte,  dp.avis.items[2].text),
+          author: pick(c.avis_3_auteur, dp.avis.items[2].author),
+          source: pick(c.avis_3_source, dp.avis.items[2].source),
+        },
+      ],
+    },
+    visite: {
+      label: pick(c.visite_label, "Planifiez votre visite"),
+      titre: pick(c.visite_titre, "On vous garde une branche."),
     },
     about: {
-      ...defaultContent.about,
-      title: pick(c.about_titre, defaultContent.about.title),
-      text: pick(c.about_texte, defaultContent.about.text),
+      ...dp.about,
+      title: pick(c.about_titre, dp.about.title),
+      text:  pick(c.about_texte, dp.about.text),
     },
     contact: {
-      ...defaultContent.contact,
-      title: pick(c.contact_titre, defaultContent.contact.title),
+      ...dp.contact,
+      title: pick(c.contact_titre, dp.contact.title),
     },
   };
 
   const telephone = pick(i.telephone, defaultInfo.telephone);
   const siteInfo = {
     ...defaultInfo,
-    nom: pick(i.nom, defaultInfo.nom),
-    adresse: pick(i.adresse, defaultInfo.adresse),
+    nom:          pick(i.nom,          defaultInfo.nom),
+    adresse:      pick(i.adresse,      defaultInfo.adresse),
     telephone,
     telephoneHref: "+1" + telephone.replace(/\D/g, ""),
-    heures: pick(i.heures, defaultInfo.heures),
-    facebook: pick(i.facebook, defaultInfo.facebook),
-    instagram: pick(i.instagram, defaultInfo.instagram),
+    heures:       pick(i.heures,       defaultInfo.heures),
+    facebook:     pick(i.facebook,     defaultInfo.facebook),
+    instagram:    pick(i.instagram,    defaultInfo.instagram),
+    nbAvis:       pick(i.nb_avis,      defaultInfo.nbAvis),
+    noteGoogle:   pick(i.note_google,  defaultInfo.noteGoogle),
+    mapsUrl:      pick(i.maps_url,     defaultInfo.mapsUrl),
   };
 
   const colors: SiteColors = {
-    primary: pick(col.primary, "#c8463b"),
-    secondary: pick(col.secondary, "#2e5443"),
-    accent: pick(col.accent, "#e3b94e"),
+    primary:    pick(col.primary,    "#c8463b"),
+    secondary:  pick(col.secondary,  "#2e5443"),
+    accent:     pick(col.accent,     "#e3b94e"),
     background: pick(col.background, "#fbf5ea"),
-    text: pick(col.text, "#26302a"),
+    text:       pick(col.text,       "#26302a"),
   };
 
   return { content, siteInfo, colors };
