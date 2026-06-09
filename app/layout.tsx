@@ -30,8 +30,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://vergerfrancoislegault.ca"),
   title: {
-    default: "Verger François Legault — Autocueillette de pommes à Mont-Saint-Hilaire",
-    template: "%s | Verger François Legault",
+    default: "Autocueillette de pommes — Verger François Legault",
+    template: "%s — Verger François Legault",
   },
   description:
     "Verger familial d'autocueillette à Mont-Saint-Hilaire. McIntosh, Lobo, Cortland, Empire, Honeycrisp. Cueillez vos pommes en toute tranquillité dès septembre.",
@@ -42,14 +42,24 @@ export const metadata: Metadata = {
     "Honeycrisp",
     "cueillette de pommes Montérégie",
   ],
+  alternates: {
+    canonical: "https://vergerfrancoislegault.ca",
+  },
   openGraph: {
     type: "website",
     locale: "fr_CA",
     siteName: "Verger François Legault",
-    title: "Verger François Legault — Autocueillette de pommes",
+    title: "Autocueillette de pommes — Verger François Legault",
     description:
       "Cueillez vos pommes en toute tranquillité dans notre verger familial de Mont-Saint-Hilaire.",
-    images: ["/images/cueillette-main-pommes.jpg"],
+    images: [
+      {
+        url: "/images/cueillette-main-pommes.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cueillette de pommes au Verger François Legault, Mont-Saint-Hilaire",
+      },
+    ],
   },
   robots: { index: true, follow: true },
 };

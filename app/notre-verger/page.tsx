@@ -7,7 +7,8 @@ import { getSiteData } from "@/lib/get-site-data";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Notre verger",
+  title: "Notre verger à Mont-Saint-Hilaire",
+  alternates: { canonical: "https://vergerfrancoislegault.ca/notre-verger" },
   description:
     "Découvrez le Verger François Legault, un verger familial d'autocueillette au pied du mont Saint-Hilaire. Notre histoire, nos pommes, notre approche.",
 };

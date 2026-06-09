@@ -4,7 +4,8 @@ import PageHero from "@/components/PageHero";
 import { galleryDefault } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Galerie",
+  title: "Galerie photos — Verger en automne",
+  alternates: { canonical: "https://vergerfrancoislegault.ca/galerie" },
   description:
     "Le Verger François Legault en images : pommiers en fleurs, autocueillette, récolte d'automne et ambiance familiale à Mont-Saint-Hilaire.",
 };

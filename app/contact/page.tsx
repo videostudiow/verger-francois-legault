@@ -6,7 +6,8 @@ import { getSiteData } from "@/lib/get-site-data";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Nous contacter — Planifier votre visite",
+  alternates: { canonical: "https://vergerfrancoislegault.ca/contact" },
   description:
     "Contactez le Verger François Legault à Mont-Saint-Hilaire pour planifier votre visite d'autocueillette. Téléphone, adresse et formulaire.",
 };
