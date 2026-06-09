@@ -125,8 +125,9 @@ export default async function HomePage() {
                   <blockquote className="mt-4 flex-1 accent-italic text-lg leading-snug text-text">
                     « {a.text} »
                   </blockquote>
-                  <figcaption className="label mt-6 text-text/45">
-                    {a.source}
+                  <figcaption className="mt-6">
+                    <span className="label block text-text/80">{a.author}</span>
+                    <span className="label block text-text/40">{a.source}</span>
                   </figcaption>
                 </figure>
               </Reveal>
